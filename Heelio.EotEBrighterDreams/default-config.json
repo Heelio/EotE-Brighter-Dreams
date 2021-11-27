@@ -1,0 +1,20 @@
+{
+	"enabled": true,
+	"requireVR": false,
+	"settings": {
+		"range": {
+			"title": "Night vision range",
+			"type": "slider",
+			"value": 10,
+			"min": 0,
+			"max": 100
+		},
+		"intensity": {
+			"title": "Night vision intensity",
+			"type": "slider",
+			"value": 1,
+			"min": 0,
+			"max": 5
+		}
+	}
+}
