@@ -2,6 +2,8 @@
 
 :warning: **Potential spoilers ahead**
 
+![Header](Readme/header.png)
+
 Gives the player night vision on Echoes of the Eye's dream world.
 
 This mod can be viewed as an accessibility/help option for people with nyctaphobia and for those who find the DLC too difficult or scary.
