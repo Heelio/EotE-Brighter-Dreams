@@ -3,7 +3,7 @@
     "author": "Heelio",
     "name": "EotE Brighter Dreams",
     "uniqueName": "Heelio.EotEBrighterDreams",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "owmlVersion": "2.0.0",
     "description": "Gives the player night vision on Echoes of the Eye's dream world"
 }

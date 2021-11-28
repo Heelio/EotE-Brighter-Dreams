@@ -6,9 +6,8 @@ namespace EotEBrighterDreams
 {
     public class EotEBrighterDreams : ModBehaviour
     {
-        DreamLanternController _dreamLanternController;
         Light _light;
-        bool _isLoaded;
+        bool _isInDreamWorld;
 
         float _lightRange = 10f;
         float _lightIntensity = .1f;
@@ -18,7 +17,6 @@ namespace EotEBrighterDreams
         {
             LoadManager.OnCompleteSceneLoad += (scene, loadScene) =>
             {
-                _isLoaded = false;
                 if (loadScene != OWScene.SolarSystem) return;
 
                 PlayerBody playerBody = FindObjectOfType<PlayerBody>();
@@ -34,26 +32,21 @@ namespace EotEBrighterDreams
 
                 UpdateDreamDimLightOptions();
 
-                ModHelper.Events.Subscribe<DreamLanternController>(Events.AfterStart);
-                ModHelper.Events.Event += OnEvent;
+                GlobalMessenger.AddListener("EnterDreamWorld", OnEnterDreamWorld);
+                GlobalMessenger.AddListener("ExitDreamWorld", OnExitDreamWorld);
             };
         }
 
-        void Update()
+        void OnEnterDreamWorld()
         {
-            if (!_isLoaded || !_enabled)
-                return;
-
-            _light.gameObject.SetActive(_dreamLanternController.isActiveAndEnabled);
+            _isInDreamWorld = true;
+            _light.gameObject.SetActive(_enabled);
         }
-        
-        void OnEvent(MonoBehaviour behaviour, Events ev)
+
+        void OnExitDreamWorld()
         {
-            if (behaviour is DreamLanternController dlc && ev == Events.AfterStart)
-            {
-                _dreamLanternController = dlc;
-                _isLoaded = true;
-            }
+            _isInDreamWorld = false;
+            _light.gameObject.SetActive(false);
         }
 
         void UpdateDreamDimLightOptions()
@@ -61,8 +54,8 @@ namespace EotEBrighterDreams
             _light.range = _lightRange;
             _light.intensity = _lightIntensity;
 
-            if (!_enabled)
-                _light.gameObject.SetActive(false);
+            if (_isInDreamWorld)
+                _light.gameObject.SetActive(_enabled);
         }
 
         public override void Configure(IModConfig config)
