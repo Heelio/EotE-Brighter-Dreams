@@ -1,6 +1,6 @@
 # Echoes of the Eye: Brighter Dreams mod
 
-:warning: **Potential spoilers ahead**
+⚠️ **Potential spoilers ahead**
 
 ![Header](Readme/header.png)
 
@@ -12,7 +12,7 @@ You can adjust both the `range` and `intensity` of the night vision, so don't he
 
 By default, the settings are left very low to preserve the original experience as much as possible, but it is just enough to see where you walk.
 
-> :warning: **I strongly recommend playing with the default settings to enjoy the almost-vanilla experience.** Increase the settings, *gradually*, only if the game really makes you uncomfortable. Although it was not made for that purpose, this mod can allow you to cheat your way through the DLC if the settings are pushed too far.
+> ⚠️ **I strongly recommend playing with the default settings to enjoy the almost-vanilla experience.** Increase the settings, *gradually*, only if the game really makes you uncomfortable. Although it was not made for that purpose, this mod can allow you to cheat your way through the DLC if the settings are pushed too far.
 
 ## Settings
 From the main/pause menu, go to `Mods` then `EotE Brighter Dreams`:
